@@ -6,6 +6,7 @@ struct Engineer {
     var defualtImageName: String
     var quickStats: QuickStats
     var questions: [Question]
+    var profileImage: UIImage?
 }
 
 struct QuickStats {
@@ -31,7 +32,7 @@ extension Engineer {
 
             Engineer(name: "Wilmar",
                      role: "Head of Engineering",
-                     defualtImageName: "",
+                     defualtImageName: "person.fill",
                      quickStats: QuickStats(years: 15, coffees: 4000, bugs: 4000),
                      questions: [
                         MainQuestions.questionOne(answer: Answer(text: "midnight", index: 3)),

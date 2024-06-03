@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionsViewController" customModule="About_You" customModuleProvider="target">
             <connections>
-                <outlet property="containerStack" destination="UdG-TJ-n5l" id="xnf-Q0-kcE"/>
+                <outlet property="containerStack" destination="odg-ck-dQa" id="nww-Vk-vHz"/>
+                <outlet property="nameLabel" destination="nameLabel" id="aN9-8K-aec"/>
+                <outlet property="profileButton" destination="profileButton" id="uid-YR-erD"/>
+                <outlet property="profileView" destination="WZR-zv-Tag" id="CNW-qf-Qc2"/>
+                <outlet property="roleLabel" destination="roleLabel" id="90E-a7-qjs"/>
                 <outlet property="scrollView" destination="h58-bz-QZS" id="O1f-Kq-3gR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,27 +26,43 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h58-bz-QZS">
-                    <rect key="frame" x="0.0" y="44" width="414" height="649"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="693"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="odg-ck-dQa">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="odg-ck-dQa">
+                            <rect key="frame" x="20" y="0.0" width="374" height="128"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZR-zv-Tag">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UdG-TJ-n5l">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="128"/>
+                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="profileButton">
+                                            <rect key="frame" x="20" y="20" width="80" height="80"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="128" placeholder="YES" id="tC0-CZ-77C"/>
+                                                <constraint firstAttribute="height" constant="80" id="profileButtonHeight"/>
+                                                <constraint firstAttribute="width" constant="80" id="profileButtonWidth"/>
                                             </constraints>
+                                            <state key="normal" image="Reenen"/>
+                                        </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="profileDetailsStack">
+                                            <rect key="frame" x="110" y="34.666666666666671" width="244" height="50.666666666666671"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Name" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nameLabel">
+                                                    <rect key="frame" x="0.0" y="0.0" width="244" height="20.333333333333332"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Role" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roleLabel">
+                                                    <rect key="frame" x="0.0" y="30.333333333333336" width="244" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                </label>
+                                            </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="UdG-TJ-n5l" firstAttribute="trailing" secondItem="WZR-zv-Tag" secondAttribute="trailing" constant="-20" id="H7B-Y6-yyB"/>
-                                        <constraint firstAttribute="bottom" secondItem="UdG-TJ-n5l" secondAttribute="bottom" id="T1D-9d-Dc9"/>
-                                        <constraint firstItem="UdG-TJ-n5l" firstAttribute="leading" secondItem="WZR-zv-Tag" secondAttribute="leading" constant="20" id="dup-o6-ti7"/>
-                                        <constraint firstItem="UdG-TJ-n5l" firstAttribute="top" secondItem="WZR-zv-Tag" secondAttribute="top" id="re7-Ym-jiB"/>
+                                        <constraint firstItem="profileButton" firstAttribute="leading" secondItem="WZR-zv-Tag" secondAttribute="leading" constant="20" id="profileButtonLeading"/>
+                                        <constraint firstItem="profileButton" firstAttribute="top" secondItem="WZR-zv-Tag" secondAttribute="top" constant="20" id="profileButtonTop"/>
+                                        <constraint firstItem="profileDetailsStack" firstAttribute="centerY" secondItem="profileButton" secondAttribute="centerY" id="profileDetailsStackCenterY"/>
+                                        <constraint firstItem="profileDetailsStack" firstAttribute="leading" secondItem="profileButton" secondAttribute="trailing" constant="10" id="profileDetailsStackLeading"/>
+                                        <constraint firstItem="profileDetailsStack" firstAttribute="trailing" secondItem="WZR-zv-Tag" secondAttribute="trailing" constant="-20" id="profileDetailsStackTrailing"/>
+                                        <constraint firstAttribute="height" constant="128" id="viewHeight"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -50,10 +70,10 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="odg-ck-dQa" firstAttribute="top" secondItem="h58-bz-QZS" secondAttribute="top" id="6tk-kJ-f0c"/>
-                        <constraint firstItem="odg-ck-dQa" firstAttribute="width" secondItem="h58-bz-QZS" secondAttribute="width" id="Ju1-2e-3Bb"/>
-                        <constraint firstItem="odg-ck-dQa" firstAttribute="leading" secondItem="h58-bz-QZS" secondAttribute="leading" id="bT7-wJ-mdR"/>
-                        <constraint firstAttribute="trailing" secondItem="odg-ck-dQa" secondAttribute="trailing" id="hL3-dq-aq6"/>
+                        <constraint firstItem="odg-ck-dQa" firstAttribute="width" secondItem="h58-bz-QZS" secondAttribute="width" constant="-40" id="Ju1-2e-3Bb"/>
+                        <constraint firstItem="odg-ck-dQa" firstAttribute="leading" secondItem="h58-bz-QZS" secondAttribute="leading" constant="20" id="leadingSpace"/>
                         <constraint firstAttribute="bottom" secondItem="odg-ck-dQa" secondAttribute="bottom" id="sVg-bu-qNZ"/>
+                        <constraint firstItem="odg-ck-dQa" firstAttribute="trailing" secondItem="h58-bz-QZS" secondAttribute="trailing" constant="-20" id="trailingSpace"/>
                     </constraints>
                 </scrollView>
             </subviews>
@@ -70,6 +90,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Reenen" width="170" height="170"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

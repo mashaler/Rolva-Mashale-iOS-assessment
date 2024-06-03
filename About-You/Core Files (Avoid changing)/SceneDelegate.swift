@@ -6,7 +6,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         setWindow(for: scene)
-        RootScreenController.shared.presentAppropriateScreenForLaunch()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        
+        // Load the XIB file
+        let introductionViewController = IntroductionViewController(nibName: "IntroductionViewController", bundle: nil)
+        
+        // Set the XIB file as the root view controller
+        window.rootViewController = introductionViewController
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
