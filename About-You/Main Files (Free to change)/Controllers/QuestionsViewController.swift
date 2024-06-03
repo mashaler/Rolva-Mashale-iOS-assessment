@@ -76,7 +76,6 @@ class QuestionsViewController: UIViewController, UIScrollViewDelegate, UIImagePi
             profileButton.setImage(selectedImage, for: .normal)
             profilePictureDelegate?.didUpdateProfilePicture(selectedImage, for: engineer)
 
-            // Post a notification with the updated image
             NotificationCenter.default.post(name: Notification.Name("ProfilePictureUpdated"), object: selectedImage)
         }
         picker.dismiss(animated: true, completion: nil)
